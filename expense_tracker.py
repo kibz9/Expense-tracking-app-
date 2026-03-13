@@ -1,5 +1,20 @@
-from expense import Expense
+class Expense: #
+   def __init__(self, name, category, amount):
+       self.name = name
+       self.category = category
+       self.amount = amount
 
+       def __repr__(self):
+           return f"<Expense(name={self.name}, category={self.category}, kes={self.amount})>"
+#is file contains the Expense class.
+
+#The purpose of this file is to define what an expense is.An expense has three important attributes:
+#name – what the expense is (food, rent, etc.)
+#category – the type of expense
+#amount – how much money was s
+
+#This is the main program where the logic of the application runs.
+from expense import Expense
 def main():
     print("Welcome to the expense tracker app")
 
@@ -69,7 +84,7 @@ def summarize_expenses(expense, expense_file_path, budget):
             lines = f.readlines()
             for line in lines:
                 stripped_line = line.strip()
-                expense_name, expense_category, expense_amount = stripped_line.split(",")
+                expense_name, expense_category, expense_amount = stripped_line.split(",")# i have used split here in order to separate  words from a ssentenceand also process  data input
                 line_expense = Expense(name=expense_name, category=expense_category, amount=float(expense_amount))
                 expenses.append(line_expense)
 
@@ -92,7 +107,8 @@ def summarize_expenses(expense, expense_file_path, budget):
 
     except FileNotFoundError:
         print("No expenses recorded yet.")
-
-
 if __name__ == "__main__":
+#simple python programing  expense tracker  which is used  to track your expense  and also store  your data  how much money you have  used  in a  mounth  
+    #also i have created  full stack development student finance systemm  using  php  check my  other  repositories  student  finance system 
+
     main()
